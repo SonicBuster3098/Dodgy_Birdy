@@ -24,8 +24,8 @@ public class Player extends Entity{
     
     public void setDefaultValues(){
         x = 20;
-        y = 490;
-        velocity =  15;
+        y = 150;
+        velocity =  10;
         skin = 0;
         action = "walking";
     }
@@ -39,6 +39,13 @@ public class Player extends Entity{
         }
     }
     public void update(){
+
+        if(skin >= 1){
+            skin = 0;
+        }
+
+        skin++;
+
         if(keyH.jump){
             jumping = true;
         }
@@ -47,8 +54,8 @@ public class Player extends Entity{
             y -= velocity;
             velocity--;
         }
-        if(y >= 490){
-            velocity = 15;
+        if(y >= 150){
+            velocity = 11;
             jumping = false;
         }
         
@@ -66,6 +73,15 @@ public class Player extends Entity{
                 break;
 
         
+        }
+
+        switch(skin){
+            case 0:
+                image = walk1;
+                break;
+            case 1:
+                image = walk2;
+                break;
         }
 
         g2.drawImage(image, x, y, 30, 30,null);

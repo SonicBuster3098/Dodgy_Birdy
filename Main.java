@@ -14,6 +14,6 @@ public class Main{
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.setTitle("Dodgy Birdy");
+        frame.setTitle("Obstacle Course");
     }
 }
